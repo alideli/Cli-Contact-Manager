@@ -25,11 +25,12 @@ It allows users to **store, search, and display contacts** with additional featu
 ---
 
 ## 📂 Project Structure
+```
 Contact_List/
 │── MainClass.java # Main program with menu-driven operations
 │── Contacts.java # Contact model (Name, NID, PHN, OP)
 │── Search.java # Search utilities (by ID, operator, phone digits)
-
+```
 ---
 
 ## 🛠 Requirements
