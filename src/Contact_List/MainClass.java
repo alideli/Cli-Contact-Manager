@@ -59,9 +59,21 @@ public class MainClass {
 				String ID = input.nextLine();
 				System.out.println("Enter Phone Number");
 				String number = input.nextLine();
-	
-				if(name != null && ID != null && number != null && opr(number) != null) {
-					contact.add(new Contacts(name, ID, number, opr(number)));
+				
+				boolean exist = false;
+				
+				if(!name.isEmpty() && !ID.isEmpty() && !number.isEmpty() && opr(number) != null) {
+					for(int i = 0; i < contact.size(); i++) {
+						if(contact.get(i).getPHN().equals(number)) {
+							exist = true;
+							break;
+						}
+					}
+					if(exist == false) {
+						contact.add(new Contacts(name, ID, number, opr(number)));
+					}else {
+						System.out.println("This number is already exist!");
+					}
 				}else if(opr(number) == null){
 					System.out.println("this number cant submit");
 				}
@@ -86,6 +98,7 @@ public class MainClass {
 				break;
 			case "exit":
 				flag = false;
+				break;
 			default:
 				System.out.println("Enter \"add\" \"sbnid\" \"sbop\" \"sbn\" \"show\" \"exit\"!!!");
 				break;
@@ -94,6 +107,7 @@ public class MainClass {
 		}
 		if(flag == false) {
 			System.out.println("Program Closed");
+			
 		}
 		
 	}
