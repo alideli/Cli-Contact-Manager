@@ -34,7 +34,7 @@ public class MainClass {
 		int n = contact.size();
 		for(int i = 0; i < n - 1; i++) {
 			for(int j = 0; j < n - i - 1; j++) {
-				if(contact.get(j).getName().compareToIgnoreCase(contact.get(j + 1).getName())>0) {
+				if(contact.get(j).getName().compareToIgnoreCase(contact.get(j + 1).getName()) > 0) {
 					Contacts temp = contact.get(j);
 					contact.set(j, contact.get(j + 1));
 	                contact.set(j + 1, temp);
@@ -59,9 +59,8 @@ public class MainClass {
 				String ID = input.nextLine();
 				System.out.println("Enter Phone Number");
 				String number = input.nextLine();
-				
+
 				boolean exist = false;
-				
 				if(!name.isEmpty() && !ID.isEmpty() && !number.isEmpty() && opr(number) != null) {
 					for(int i = 0; i < contact.size(); i++) {
 						if(contact.get(i).getPHN().equals(number)) {
@@ -100,7 +99,7 @@ public class MainClass {
 				flag = false;
 				break;
 			default:
-				System.out.println("Enter \"add\" \"sbnid\" \"sbop\" \"sbn\" \"show\" \"exit\"!!!");
+				System.out.println("Error!!!");
 				break;
 			}
 			
